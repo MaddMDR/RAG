@@ -9,4 +9,4 @@ services:
         - "11434:11434"
     volumes:
         - "./ollama/:/root/.ollama/"
-    entrypoint: ['/bin/sh', '-c', 'ollama serve && ollama run llama3.2']git
+    entrypoint: ['/bin/sh', '-c', 'ollama serve && ollama run llama3.2']
