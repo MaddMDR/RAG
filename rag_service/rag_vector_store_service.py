@@ -11,7 +11,7 @@ config = ConfigParser()
 config.read('config.ini')
 
 # Initialize the embedding model using FastEmbed
-embedding_model = FastEmbedEmbeddings(model="nomic-ai/nomic-embed-text-v1")
+embedding_model = FastEmbedEmbeddings(model=config["EMBEDDING_MODEL"]["embedding_model"])
 
 class VectorDBService:
     def __init__(self):
