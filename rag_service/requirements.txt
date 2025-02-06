@@ -1,0 +1,9 @@
+langchain
+ollama
+langchain_ollama
+langchain_community
+fastapi
+uvicorn
+pydantic
+fastembed
+python-multipart

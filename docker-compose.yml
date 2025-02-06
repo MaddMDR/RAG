@@ -1,0 +1,12 @@
+services:
+  rag_service:
+    build : ./rag_service
+    ports:
+        - "8000:8000"
+  ollama:
+    image: "ollama/ollama"
+    ports: 
+        - "11434:11434"
+    volumes:
+        - "./ollama/:/root/.ollama/"
+    entrypoint: ['/bin/sh', '-c', 'ollama serve && ollama run llama3.2']git
