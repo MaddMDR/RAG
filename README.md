@@ -20,16 +20,16 @@ This section guides you through setting up the Ollama service, which hosts the L
 To leverage Ollama's Docker image, follow these steps:
 
 1. Create the Ollama Docker Container :
-    Choose the appropriate command based on your system's capabilities:
-   * CPU (Default): 
-  ```bash
-  docker run -d -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-  ```
+Choose the appropriate command based on your system's capabilities:
+* CPU (Default): 
+```bash
+docker run -d -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
 
-   * GPU 
-  ```bash
-  docker run -d --gpus all -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-  ```
+* GPU 
+```bash
+docker run -d --gpus all -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
 
 **Important**: This command assumes you have the NVIDIA Container Toolkit installed and configured. Refer to the NVIDIA and Ollama documentation for setup instructions.
 
@@ -37,15 +37,15 @@ To leverage Ollama's Docker image, follow these steps:
 2. Run the Llama3.2 Model (Inside the Container):
     To make Llama3.2 available for inference, you need to explicitly run it within the Ollama container. You only need to do this once after creating the container.
 
-    ```bash
-    docker exec -it ollama ollama run llama3.2
-    ```
+```bash
+docker exec -it ollama ollama run llama3.2
+```
 
 3. Pull the Llama3.2 Model (Optional):
     While not strictly required before starting the container, pre-pulling the Llama3.2 model ensures it's immediately available upon startup, preventing delays. You can pre-pull by executing this outside the container.
 
-    ```bash
-    docker run --rm -v ollama_data:/root/.ollama ollama/ollama ollama pull llama3:2
-    ```
+```bash
+docker run --rm -v ollama_data:/root/.ollama ollama/ollama ollama pull llama3:2
+```
 
-    This will create a docker volume that will contain the model's image if it is needed, and if the model's images isn't it, it will be downloaded.
+This will create a docker volume that will contain the model's image if it is needed, and if the model's images isn't it, it will be downloaded.
