@@ -80,3 +80,10 @@ To start the RAG service and make it accessible, you'll run the `app.py` Python 
 ```bash
 python app.py
 ```
+
+## Run all services from Terminal (Super Optional - Using the run.sh Script):
+For convenience, a shell script run.sh has been provided to automate the entire setup and execution process, including starting the Ollama service (if necessary) and the FastAPI application. This script streamlines the workflow from initialization to launching the RAG service.
+
+```bash
+./run.sh
+```
