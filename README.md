@@ -13,7 +13,7 @@ Docker-Compose Structure: The Docker-Compose setup will orchestrate two primary 
 * **Ollama Service**: Runs the Ollama server, hosting the Llama3.2 LLM. For more information, the user can open link documentation [Ollama](https://github.com/ollama/ollama).
 * **RAG API Service**: Implements the document ingestion and question answering endpoints, leveraging FAISS for vector storage and interacting with the Ollama LLM. For this service, utilizing Python as based programming languages and FastAPI as a framework to inference the service.
 
-# How to setup Ollama Service
+## How to setup Ollama Service
 
 This section guides you through setting up the Ollama service, which hosts the Llama3.2 LLM, using Docker. This provides a local inference engine for the RAG pipeline. For in-depth information, refer to the official [Ollama documentation](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image).
 
@@ -23,12 +23,12 @@ To leverage Ollama's Docker image, follow these steps:
 Choose the appropriate command based on your system's capabilities:
 * CPU (Default): 
 ```bash
-docker run -d -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
 
 * GPU 
 ```bash
-docker run -d --gpus all -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+docker run -d --gpus all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
 
 **Important**: This command assumes you have the NVIDIA Container Toolkit installed and configured. Refer to the NVIDIA and Ollama documentation for setup instructions.
