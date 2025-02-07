@@ -49,3 +49,34 @@ docker run --rm -v ollama_data:/root/.ollama ollama/ollama ollama pull llama3:2
 ```
 
 This will create a docker volume that will contain the model's image if it is needed, and if the model's images isn't it, it will be downloaded.
+
+## Running the RAG Service
+
+This section describes how to run the RAG service after the Ollama service (which hosts the language model) is active.
+
+**Process Overview:**
+
+1.  **Vector Store Initialization:**
+    *   A FAISS index is created for efficient nearest-neighbor search of document embeddings.
+    *   The embedding model is configured (specifying the model and its parameters).
+    *   Documents are loaded for processing.
+2.  **Document Upload and Ingestion:** Documents are uploaded and their embeddings are generated and stored in the FAISS index.
+3.  **RAG Pipeline Configuration:**
+    *   The service retrieves the populated FAISS index.
+    *   A prompt template is defined to format user queries and retrieved context for the language model.
+    *   A LangChain (or similar) chain is initialized to orchestrate the retrieval and generation steps.  This chain handles:
+        *   Query embedding.
+        *   Similarity search in the FAISS index.
+        *   Context retrieval.
+        *   Prompt construction.
+        *   Language model invocation (via Ollama).
+        *   Response generation.
+4.  **FastAPI Service Startup:** The RAG service is exposed via a FastAPI endpoint, providing an API for querying the document collection.
+
+**Launching the FastAPI Application:**
+
+To start the RAG service and make it accessible, you'll run the `app.py` Python file.  This file contains the FastAPI application code.  Open your terminal or command prompt, navigate to the directory containing `app.py`, and execute the following command:
+
+```bash
+python app.py
+```
