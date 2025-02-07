@@ -21,12 +21,12 @@ To leverage Ollama's Docker image, follow these steps:
 
 1. Create the Ollama Docker Container :
     Choose the appropriate command based on your system's capabilities:
-### CPU (Default): 
+   * CPU (Default): 
   ```bash
   docker run -d -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
   ```
 
-### GPU 
+   * GPU 
   ```bash
   docker run -d --gpus all -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
   ```
