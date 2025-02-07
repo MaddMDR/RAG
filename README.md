@@ -1,6 +1,6 @@
 # **Retrieval Augmentation Generation (RAG) Engine**
 
-This project implements a Retrieval Augmented Generation (RAG) engine for building a document-aware chatbot, specifically designed for the Kuasar AI Engineer Intern technical assessment. Leveraging a locally hosted Llama3.2 Large Language Model (LLM) served via Ollama, the system ensures data privacy and control. The LLM's knowledge is augmented using FAISS for efficient vector store indexing and retrieval of relevant document snippets. This enables contextually rich and accurate response generation to user queries.
+This project implements a Retrieval Augmented Generation (RAG) engine for building a document-aware chatbot, specifically designed for the **Kuasar AI Engineer Intern** technical assessment. Leveraging a locally hosted Llama3.2 Large Language Model (LLM) served via Ollama, the system ensures data privacy and control. The LLM's knowledge is augmented using FAISS for efficient vector store indexing and retrieval of relevant document snippets. This enables contextually rich and accurate response generation to user queries.
 
 The project is deployed as an API using Docker-Compose, creating a robust and scalable solution. It exposes the following endpoints:
 
