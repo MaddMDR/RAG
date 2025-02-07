@@ -20,18 +20,18 @@ This section guides you through setting up the Ollama service, which hosts the L
 To leverage Ollama's Docker image, follow these steps:
 
 1. Create the Ollama Docker Container :
-Choose the appropriate command based on your system's capabilities:
+    Choose the appropriate command based on your system's capabilities:
 ### CPU (Default): 
-```bash
-docker run -d -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-```
+  ```bash
+  docker run -d -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+  ```
 
 ### GPU 
-```bash
-docker run -d --gpus all -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-```
+  ```bash
+  docker run -d --gpus all -v ollaa:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+  ```
 
-**Important**: This command assumes you have the NVIDIA Container Toolkit installed and configured. Refer to the NVIDIA and Ollama documentation for setup instructions.
+    **Important**: This command assumes you have the NVIDIA Container Toolkit installed and configured. Refer to the NVIDIA and Ollama documentation for setup instructions.
 
 
 2. Run the Llama3.2 Model (Inside the Container):
